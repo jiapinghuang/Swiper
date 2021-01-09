@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="swiper.js" ></script>
+		<style>
+			.imgs{											
+				height: 400px;
+				top: 100px;
+				left: 50%;
+				width: 400px;
+				margin: 0 auto;
+			}
+			img{
+				width: 400px;
+				height: 400px;
+				position: absolute;
+						
+			}
+			button{
+				position:relative;
+				z-index: 10000;
+			}	
+				
+		</style>
+	</head>
+	<body>
+		
+		<div class="imgs">
+			<img src="1.jpg"/>
+			<img src="2.jpg" />
+			<img src="3.jpg"/>
+			<img src="4.jpg" />
+			<button>stop</button>
+			<button>start</button>
+		</div>
+		<script>
+			var imgs=document.querySelectorAll('img')
+			var btns=document.querySelectorAll('button')
+			var config={
+				'speed':2000,
+				'onmouse':true
+			}
+			var swiper = new Swiper(imgs,config);
+			//
+			btns[0].onclick=function(){
+				swiper.stop();
+			}
+			btns[1].onclick=function(){
+				swiper.active();
+			}
+		</script>
+	</body>
+</html>
